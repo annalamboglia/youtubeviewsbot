@@ -38,10 +38,10 @@ def handle(msg):
 
        
 		if isLink(text):
-			 = text
-      bot.sendMessage(currId, 'Sto iniziando con le views!')
-      doViews(link)
-      bot.sendMessage(currId, "Ho finito di fare le views")
+			link = text
+			bot.sendMessage(currId, 'Sto iniziando con le views!')
+			doViews(link)
+			bot.sendMessage(currId, "Ho finito di fare le views")
 			
 	else:
 		pass
@@ -71,16 +71,13 @@ def doViews(link):
 
 	url=str(link)
 	driver=[]
-
-        for i in range(0,1000):
-               driver[i]=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-               driver[i].get(url)
-
-        time.sleep(60)
-
-        for i in range(0,1000):
-               driver[i].close()
-
+	
+	for i in range(0,1000):
+	  driver[i]=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	  driver[i].get(url)
+	  time.sleep(60)
+	  for i in range(0,1000):
+	    driver[i].close()
 
 
 
@@ -90,11 +87,9 @@ def startMainLoop():
 bot = telepot.Bot("1990436864:AAHBTxhv9a6guc7HdChoLbg4O4vGB-xFeTo")
 
 # Lista di utenti autorizzati
-authorizedUsers = [] 
+authorizedUsers= [] 
 authorizedUsers.append("145318515")
 
-t1 = Thread(target=)
 t2 = Thread(target=startScheduleLoop)
 
-t1.start()
 t2.start()
