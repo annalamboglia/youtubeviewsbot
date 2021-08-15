@@ -38,10 +38,10 @@ def handle(msg):
 
        
 		if isLink(text):
-			link = text
-                        bot.sendMessage(currId, 'Sto iniziando con le views!')
-                        doViews(link):
-                        bot.sendMessage(currId, "Ho finito di fare le views")
+			 = text
+      bot.sendMessage(currId, 'Sto iniziando con le views!')
+      doViews(link)
+      bot.sendMessage(currId, "Ho finito di fare le views")
 			
 	else:
 		pass
@@ -93,7 +93,7 @@ bot = telepot.Bot("1990436864:AAHBTxhv9a6guc7HdChoLbg4O4vGB-xFeTo")
 authorizedUsers = [] 
 authorizedUsers.append("145318515")
 
-t1 = Thread(target=startMainLoop)
+t1 = Thread(target=)
 t2 = Thread(target=startScheduleLoop)
 
 t1.start()
