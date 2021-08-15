@@ -70,21 +70,15 @@ def doViews(link,id):
 	op.add_argument("--disable-dev-sh-usage")
 
 	url=link
-	driver1=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-	driver2=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-	driver3=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	driver=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 	
 	for i in range(0,999):
-	 bot.sendMessage(id,"Apro i browser")
-	 driver1.get(url)
-	 driver2.get(url)
-	 driver3.get(url)
-	 bot.sendMessage(id,"Ho aperto 3 Browser")
+	 bot.sendMessage(id,"Apro il browser")
+	 driver.get(url)
+	 bot.sendMessage(id,"Ho aperto il Browser")
 	 time.sleep(300)
 	 bot.sendMessage(id,"ho aperto i browser ora aspetto")
-	driver1.close()
-	driver2.close()
-	driver3.close()
+	driver.close()
 
 
 def startMainLoop():
