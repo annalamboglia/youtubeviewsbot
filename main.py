@@ -28,7 +28,7 @@ def handle(msg):
 
 		text = msg['text']
 		print(text)
-		logging.info('>text: ' + text)
+		
 
 		if text=="/start":
 			bot.sendMessage(currId, 'Ciao! Benvenuto! Per iniziare scrivi il link del video')
