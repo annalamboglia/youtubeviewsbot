@@ -40,8 +40,8 @@ def handle(msg):
 		if isLink(text):
 			link = text
                         bot.sendMessage(currId, 'Sto iniziando con le views!')
-                        if doViews(link):
-                                bot.sendMessage(currId, "Ho finito di fare le views")
+                        doViews(link):
+                        bot.sendMessage(currId, "Ho finito di fare le views")
 			
 	else:
 		pass
@@ -81,7 +81,6 @@ def doViews(link):
         for i in range(0,1000):
                driver[i].close()
 
-	return True
 
 
 
