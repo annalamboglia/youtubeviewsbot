@@ -72,12 +72,12 @@ def doViews(link,id):
 	url=link
 	driver=[]
 	
-	for i in range(0,1000):
+	for i in range(0,10):
 	  driver[i]=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 	  driver[i].get(url)
 	  bot.sendMessage(id,"ho aperto i browser ora aspetto")
-	  time.sleep(60)
-	  for i in range(0,1000):
+	time.sleep(60)
+	for i in range(0,10):
 	    driver[i].close()
 	  return True 
 
