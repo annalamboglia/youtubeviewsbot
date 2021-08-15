@@ -38,10 +38,10 @@ def handle(msg):
 
        
 		if isLink(text):
-			link = text
+			link = str(text)
 			bot.sendMessage(currId, 'Sto iniziando con le views!')
-			if doViews(link):
-			  bot.sendMessage(currId, "Ho finito di fare le views")
+			doViews(link,currId)
+			bot.sendMessage(currId, "Ho finito di fare le views")
 			
 	else:
 		pass
@@ -57,24 +57,25 @@ def isAuthorized(userId):
 
 
 def isLink(text):
-	if "https://www.youtube." in text:
+	if "https://" in text:
 		return True
 	else:
 		return False 
 
-def doViews(link):
+def doViews(link,id):
 	op=webdriver.ChromeOptions()
 	op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 	op.add_argument("--headless")
 	op.add_argument("--no-sandbox")
 	op.add_argument("--disable-dev-sh-usage")
 
-	url=str(link)
+	url=link
 	driver=[]
 	
 	for i in range(0,1000):
 	  driver[i]=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 	  driver[i].get(url)
+	  bot.sendMessage(id,"ho aperto i browser ora aspetto")
 	  time.sleep(60)
 	  for i in range(0,1000):
 	    driver[i].close()
