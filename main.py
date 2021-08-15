@@ -79,7 +79,6 @@ def doViews(link,id):
 	time.sleep(60)
 	for i in range(0,10):
 	    driver[i].close()
-	  return True 
 
 
 
