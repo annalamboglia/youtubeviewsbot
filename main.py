@@ -78,12 +78,12 @@ def doViews(link,id):
 	  driver1.get(url)
 	  driver2.get(url)
 	  driver3.get(url)
+	  bot.sendMessage(id,"Ho aperto 3 Browser")
 	  time.sleep(300)
-	bot.sendMessage(id,"ho aperto i browser ora aspetto")
+	  bot.sendMessage(id,"ho aperto i browser ora aspetto")
 	driver1.close()
 	driver2.close()
 	driver3.close()
-
 
 
 def startMainLoop():
