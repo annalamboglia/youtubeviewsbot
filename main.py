@@ -82,7 +82,9 @@ def doViews(link,id):
 	  driver3.get(url)
 	bot.sendMessage(id,"ho aperto i browser ora aspetto")
 	time.sleep(60)
-	driver.close()
+	driver1.close()
+	driver2.close()
+	driver3.close()
 
 
 
