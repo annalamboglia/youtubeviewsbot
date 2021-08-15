@@ -88,7 +88,6 @@ def startMainLoop():
 	MessageLoop(bot, handle).run_forever()
 
 bot = telepot.Bot("1990436864:AAHBTxhv9a6guc7HdChoLbg4O4vGB-xFeTo")
-print(bot.getMe())
 
 # Lista di utenti autorizzati
 authorizedUsers = [] 
