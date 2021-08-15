@@ -39,10 +39,9 @@ def handle(msg):
        
 		if isLink(text):
 			link = text
-
-
                         bot.sendMessage(currId, 'Sto iniziando con le views!')
-			
+                        if doViews(link):
+                                bot.sendMessage(currId, "Ho finito di fare le views")
 			
 	else:
 		pass
@@ -63,7 +62,7 @@ def isLink(text):
 	else:
 		return False 
 
-def doViews(link,id):
+def doViews(link):
 	op=webdriver.ChromeOptions()
 	op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 	op.add_argument("--headless")
@@ -89,13 +88,11 @@ def doViews(link,id):
 def startMainLoop():
 	MessageLoop(bot, handle).run_forever()
 
-telegram_token = config['telegram_api']['telegram_token']
-bot = telepot.Bot("1941329366:AAFVJ1acWa6mPixyN9W2etxt2aQ91703Hc4")
+bot = telepot.Bot("1990436864:AAHBTxhv9a6guc7HdChoLbg4O4vGB-xFeTo")
 print(bot.getMe())
 
 # Lista di utenti autorizzati
-authorizedUsers = []
-#user1 = 
+authorizedUsers = [] 
 authorizedUsers.append("145318515")
 
 t1 = Thread(target=startMainLoop)
