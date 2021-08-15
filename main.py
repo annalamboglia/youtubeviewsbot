@@ -70,9 +70,9 @@ def doViews(link,id):
 	op.add_argument("--disable-dev-sh-usage")
 
 	url=link
-	
+	driver=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+
 	for i in range(0,10):
-	  driver=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 	  driver.get(url)
 	  bot.sendMessage(id,"ho aperto i browser ora aspetto")
 	time.sleep(60)
