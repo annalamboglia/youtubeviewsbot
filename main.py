@@ -1,7 +1,6 @@
 import os
 import time
 import telepot
-import urllib
 
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
@@ -96,7 +95,7 @@ print(bot.getMe())
 
 # Lista di utenti autorizzati
 authorizedUsers = []
-#user1 = config['authorized_users']['user_1']
+#user1 = 
 authorizedUsers.append("145318515")
 
 t1 = Thread(target=startMainLoop)
