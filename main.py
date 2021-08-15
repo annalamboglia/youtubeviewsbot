@@ -74,11 +74,11 @@ def doViews(link,id):
 	driver2=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 	driver3=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 
-	for i in range(0,1000):
+	for i in range(0,2000):
 	  driver1.get(url)
 	  driver2.get(url)
 	  driver3.get(url)
-	  time.sleep(5)
+	  time.sleep(300)
 	bot.sendMessage(id,"ho aperto i browser ora aspetto")
 	driver1.close()
 	driver2.close()
