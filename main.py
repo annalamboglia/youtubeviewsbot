@@ -70,21 +70,28 @@ def doViews(link,id):
 	op.add_argument("--disable-dev-sh-usage")
 
 	url=str(link)
-	driver=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-	#driver=webdriver.Chrome()
-
+	driver1=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	driver2=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	driver3=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	
+	#driver1=webdriver.Chrome()
+	#driver2=webdriver.Chrome()
+	#driver3=webdriver.Chrome()
 
 	for i in range(0,999):
 		#bot.sendMessage(id,"Apro il browser")
-		driver.get(url)
+		driver1.get(url)
+		driver2.get(url)
+		driver3.get(url)
 		#bot.sendMessage(id,"Ho aperto il Browser")
 		try:
-			element=driver.find_element_by_xpath("//*[text()='Accetto']")
-			element.click()
+			element=driver1.find_element_by_xpath("//*[text()='Accetto']").click()
+			element=driver2.find_element_by_xpath("//*[text()='Accetto']").click()
+			element=driver3.find_element_by_xpath("//*[text()='Accetto']").click()
 		except:
 			print("Non ho cliccato")
 
-	time.sleep(50)
+		time.sleep(50)
 	bot.sendMessage(id,"ho aperto i browser ora aspetto")
 	driver.close()
 
@@ -100,3 +107,4 @@ authorizedUsers.append("145318515")
 
 t2 = Thread(target=startMainLoop)
 t2.start()
+
