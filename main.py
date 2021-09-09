@@ -105,7 +105,7 @@ def doViews(link,id):
 def startMainLoop():
 	MessageLoop(bot, handle).run_forever()
 
-bot = telepot.Bot("TOKEN")
+bot = telepot.Bot("1990524390:AAFEZYwose4jyVKokNUWfHGisQdSRI750_Q")
 
 # Lista di utenti autorizzati
 authorizedUsers= [] 
