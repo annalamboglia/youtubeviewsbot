@@ -24,7 +24,7 @@ def handle(msg):
 		# Check if user is authorized
 		if not isAuthorized(currId):
 			bot.sendMessage(currId, 'Utente Non autorizzato')
-			return
+			return false
 
 		text = msg['text']
 		print(text)
@@ -88,18 +88,24 @@ def doViews(link,id):
 			element=driver1.find_element_by_xpath("//*[text()='Accetto']").click()
 			element=driver2.find_element_by_xpath("//*[text()='Accetto']").click()
 			element=driver3.find_element_by_xpath("//*[text()='Accetto']").click()
+			
 		except:
 			print("Non ho cliccato")
-
+			
+		if i==0:
+			bot.sendMessage(id,"ho aperto i browser ora aspetto")
+		if i==100:
+			bot.sendMessage(id,"sto a 100 views")
 		time.sleep(50)
-	bot.sendMessage(id,"ho aperto i browser ora aspetto")
-	driver.close()
+	driver1.close()
+	driver2.close()
+	driver3.close()
 
 
 def startMainLoop():
 	MessageLoop(bot, handle).run_forever()
 
-bot = telepot.Bot("1990436864:AAHBTxhv9a6guc7HdChoLbg4O4vGB-xFeTo")
+bot = telepot.Bot("TOKEN")
 
 # Lista di utenti autorizzati
 authorizedUsers= [] 
@@ -107,4 +113,5 @@ authorizedUsers.append("145318515")
 
 t2 = Thread(target=startMainLoop)
 t2.start()
+
 
