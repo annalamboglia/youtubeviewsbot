@@ -63,16 +63,16 @@ def isLink(text):
 		return False 
 
 def doViews(link,id):
-	op=webdriver.ChromeOptions()
-	op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-	op.add_argument("--headless")
-	op.add_argument("--no-sandbox")
-	op.add_argument("--disable-dev-sh-usage")
+	#op=webdriver.ChromeOptions()
+	#op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+	#op.add_argument("--headless")
+	#op.add_argument("--no-sandbox")
+	#op.add_argument("--disable-dev-sh-usage")
 
 	url=str(link)
 	driver1=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-	driver2=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-	driver3=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	#driver2=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	#driver3=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 	
 	#driver1=webdriver.Chrome()
 	#driver2=webdriver.Chrome()
@@ -86,10 +86,11 @@ def doViews(link,id):
 		#bot.sendMessage(id,"Ho aperto il Browser")
 		try:
 			element=driver1.find_element_by_xpath("//*[text()='Accetto']").click()
-			element=driver2.find_element_by_xpath("//*[text()='Accetto']").click()
-			element=driver3.find_element_by_xpath("//*[text()='Accetto']").click()
+			#element=driver2.find_element_by_xpath("//*[text()='Accetto']").click()
+			#element=driver3.find_element_by_xpath("//*[text()='Accetto']").click()
 			
 		except:
+			bot.sendMessage(id,"Non Sono Riuscito ad aprire il driver!")
 			print("Non ho cliccato")
 			
 		if i==0:
@@ -98,8 +99,8 @@ def doViews(link,id):
 			bot.sendMessage(id,"sto a 100 views")
 		time.sleep(50)
 	driver1.close()
-	driver2.close()
-	driver3.close()
+	#driver2.close()
+	#driver3.close()
 
 
 def startMainLoop():
@@ -113,5 +114,4 @@ authorizedUsers.append("145318515")
 
 t2 = Thread(target=startMainLoop)
 t2.start()
-
 
