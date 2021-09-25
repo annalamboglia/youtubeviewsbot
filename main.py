@@ -63,34 +63,38 @@ def isLink(text):
 		return False 
 
 def doViews(link,id):
-	op=webdriver.ChromeOptions()
+	op = webdriver.ChromeOptions()
 	op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 	op.add_argument("--headless")
 	op.add_argument("--no-sandbox")
 	op.add_argument("--disable-dev-sh-usage")
-
+	
 	url=str(link)
-	driver1=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-	#driver2=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
-	#driver3=webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+	driver1 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
+	driver2 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
+	driver3 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
+	driver4 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
 	
 	#driver1=webdriver.Chrome()
 	#driver2=webdriver.Chrome()
 	#driver3=webdriver.Chrome()
+	#driver4=webdriver.Chrome()
 
 	for i in range(0,999):
 		#bot.sendMessage(id,"Apro il browser")
 		driver1.get(url)
-		#driver2.get(url)
-		#driver3.get(url)
-		bot.sendMessage(id,"Ho aperto il Browser")
+		driver2.get(url)
+		driver3.get(url)
+		driver4.get(url)
+		#bot.sendMessage(id,"Ho aperto il Browser")
 		try:
 			element=driver1.find_element_by_xpath("//*[text()='Accetto']").click()
-			#element=driver2.find_element_by_xpath("//*[text()='Accetto']").click()
-			#element=driver3.find_element_by_xpath("//*[text()='Accetto']").click()
+			element=driver2.find_element_by_xpath("//*[text()='Accetto']").click()
+			element=driver3.find_element_by_xpath("//*[text()='Accetto']").click()
+			element=driver4.find_element_by_xpath("//*[text()='Accetto']").click()
 			
 		except:
-			bot.sendMessage(id,"Non Sono Riuscito ad aprire il driver!")
+			#bot.sendMessage(id,"Non Sono Riuscito ad aprire il driver!")
 			print("Non ho cliccato")
 			
 		if i==0:
