@@ -77,7 +77,7 @@ def doViews(link,id):
 	for i in range(0,999):
 		#bot.sendMessage(id,"Apro il browser")
 		driver1.get(url)
-		bot.sendMessage(id,"Ho aperto il Browser")
+		#bot.sendMessage(id,"Ho aperto il Browser")
 		try:
 			element=driver1.find_element_by_xpath("//*[text()='Accetto']").click()
 			
