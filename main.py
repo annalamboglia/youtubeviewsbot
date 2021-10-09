@@ -63,22 +63,25 @@ def isLink(text):
 		return False 
 
 def doViews(link,id):
-	op = webdriver.ChromeOptions()
-	op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-	op.add_argument("--headless")
-	op.add_argument("--no-sandbox")
-	op.add_argument("--disable-dev-sh-usage")
-	
 	url=str(link)
-	driver1 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
-	driver2 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
-	driver3 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
-	driver4 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
+
+	chrome_options = webdriver.ChromeOptions()
+	chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+	chrome_options.add_argument("--headless")
+	chrome_options.add_argument("--disable-dev-shm-usage")
+	chrome_options.add_argument("--no-sandbox")
+	driver1 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
+	driver2 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
+	driver3 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
+	driver4 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
+	driver5 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
+
 	
 	#driver1=webdriver.Chrome()
 	#driver2=webdriver.Chrome()
 	#driver3=webdriver.Chrome()
 	#driver4=webdriver.Chrome()
+	#driver5=webdriver.Chrome()
 
 	for i in range(0,999):
 		#bot.sendMessage(id,"Apro il browser")
@@ -86,12 +89,14 @@ def doViews(link,id):
 		driver2.get(url)
 		driver3.get(url)
 		driver4.get(url)
+		driver5.get(url)
 		#bot.sendMessage(id,"Ho aperto il Browser")
 		try:
 			element=driver1.find_element_by_xpath("//*[text()='Accetto']").click()
 			element=driver2.find_element_by_xpath("//*[text()='Accetto']").click()
 			element=driver3.find_element_by_xpath("//*[text()='Accetto']").click()
 			element=driver4.find_element_by_xpath("//*[text()='Accetto']").click()
+			element=driver5.find_element_by_xpath("//*[text()='Accetto']").click()
 			
 		except:
 			#bot.sendMessage(id,"Non Sono Riuscito ad aprire il driver!")
@@ -103,8 +108,10 @@ def doViews(link,id):
 			bot.sendMessage(id,"sto a 100 views")
 		time.sleep(50)
 	driver1.close()
-	#driver2.close()
-	#driver3.close()
+	driver2.close()
+	driver3.close()
+	driver4.close()
+	driver5.close()
 
 
 def startMainLoop():
@@ -118,4 +125,3 @@ authorizedUsers.append("145318515")
 
 t2 = Thread(target=startMainLoop)
 t2.start()
-
