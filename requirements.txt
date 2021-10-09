@@ -39,4 +39,5 @@ terminado==0.8.3
 threadpoolctl==2.0.0
 toml==0.10.1
 tornado==6.0.4
+urllib3==1.25.10
 webdriverdownloader==1.1.0.3
