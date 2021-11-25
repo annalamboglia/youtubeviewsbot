@@ -26,7 +26,7 @@ pyshark==0.4.2.11
 PySocks==1.7.1
 pyswip==0.2.9
 pytest==5.4.3
-python-dateutil==2.8.2
+python-dateutil
 python-dotenv==0.15.0
 python-telegram-bot==12.6.1
 PyTweening==1.0.3
