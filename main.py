@@ -89,7 +89,7 @@ def doViews(link,id):
 			bot.sendMessage(id,"ho aperto i browser ora aspetto")
 		if i==100:
 			bot.sendMessage(id,"sto a 100 views")
-		time.sleep(50)
+		time.sleep(3600)
 	driver1.close()
 
 
