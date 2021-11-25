@@ -1,4 +1,4 @@
-async-timeout==3.0.1
+async-timeout
 bash==0.6
 bs4==0.0.1
 configparser==5.0.2
